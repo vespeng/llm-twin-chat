@@ -1,152 +1,104 @@
-# LLM Chat Application Template
+# LLM Twin Chat
 
-A simple, ready-to-deploy chat application template powered by Cloudflare Workers AI. This template provides a clean starting point for building AI chat applications with streaming responses.
+基于 Cloudflare Workers AI 的 `llm-chat-template` 模板定制的个人数字分身聊天应用程序。此应用基于 Cloudflare 提供的基础聊天模板扩展，支持流式响应，可轻松定制为个人数字分身。
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/llm-chat-app-template)
+## 特性
 
-<!-- dash-content-start -->
+- 💬 简洁响应式的聊天界面
+- ⚡ 服务器发送事件（SSE）流式响应
+- 🧠 基于 Cloudflare Workers AI 大语言模型
+- 🛠️ 基于 TypeScript 和 Cloudflare Workers 构建
+- 📱 移动端友好设计
+- 🔄 客户端维护聊天历史
+- 🔎 内置可观测性日志记录
 
-## Demo
+## 快速开始
 
-This template demonstrates how to build an AI-powered chat interface using Cloudflare Workers AI with streaming responses. It features:
+### 先决条件
 
-- Real-time streaming of AI responses using Server-Sent Events (SSE)
-- Easy customization of models and system prompts
-- Support for AI Gateway integration
-- Clean, responsive UI that works on mobile and desktop
-
-## Features
-
-- 💬 Simple and responsive chat interface
-- ⚡ Server-Sent Events (SSE) for streaming responses
-- 🧠 Powered by Cloudflare Workers AI LLMs
-- 🛠️ Built with TypeScript and Cloudflare Workers
-- 📱 Mobile-friendly design
-- 🔄 Maintains chat history on the client
-- 🔎 Built-in Observability logging
-<!-- dash-content-end -->
-
-## Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18 or newer)
+- [Node.js](https://nodejs.org/) (v18 或更高版本)
 - [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
-- A Cloudflare account with Workers AI access
+- 拥有 Workers AI 访问权限的 Cloudflare 账户
 
-### Installation
+### 安装
 
-1. Clone this repository:
+1. 克隆此仓库：
 
    ```bash
-   git clone https://github.com/cloudflare/templates.git
-   cd templates/llm-chat-app
+   git clone https://github.com/vespeng/llm-twin-chat.git
+   cd llm-twin-chat.git
    ```
 
-2. Install dependencies:
+2. 安装依赖项：
 
    ```bash
    npm install
    ```
 
-3. Generate Worker type definitions:
+3. 生成 Worker 类型定义：
    ```bash
    npm run cf-typegen
    ```
 
-### Development
+### 开发
 
-Start a local development server:
+启动本地开发服务器：
 
 ```bash
 npm run dev
 ```
 
-This will start a local server at http://localhost:8787.
+这将在 http://localhost:8787 启动本地服务器。
 
-Note: Using Workers AI accesses your Cloudflare account even during local development, which will incur usage charges.
+_ps：即使在本地开发期间使用 Workers AI 也会访问你的 Cloudflare 账户，从而产生使用费用。_
 
-### Deployment
+### 部署
 
-Deploy to Cloudflare Workers:
+部署到 Cloudflare Workers：
 
 ```bash
 npm run deploy
 ```
 
-### Monitor
+### 监控
 
-View real-time logs associated with any deployed Worker:
+查看与任何已部署 Worker 关联的实时日志：
 
 ```bash
 npm wrangler tail
 ```
 
-## Project Structure
+## 项目结构
 
 ```
 /
-├── public/             # Static assets
-│   ├── index.html      # Chat UI HTML
-│   └── chat.js         # Chat UI frontend script
+├── public/             # 静态资源
+│   ├── index.html      # 聊天 UI HTML
+│   └── chat.js         # 聊天 UI 前端脚本
 ├── src/
-│   ├── index.ts        # Main Worker entry point
-│   └── types.ts        # TypeScript type definitions
-├── test/               # Test files
-├── wrangler.jsonc      # Cloudflare Worker configuration
-├── tsconfig.json       # TypeScript configuration
-└── README.md           # This documentation
+│   ├── index.ts        # 主 Worker 入口点
+│   └── types.ts        # TypeScript 类型定义
+├── test/               # 测试文件
+├── wrangler.jsonc      # Cloudflare Worker 配置
+├── tsconfig.json       # TypeScript 配置
+└── README.md           # 此文档
 ```
 
-## How It Works
+## 自定义
 
-### Backend
+### 更改模型
 
-The backend is built with Cloudflare Workers and uses the Workers AI platform to generate responses. The main components are:
+要使用不同的 AI 模型，请更新 src/index.ts 中的 MODEL_ID 常量。你可以在 Cloudflare Workers AI 文档 中找到可用模型。
 
-1. **API Endpoint** (`/api/chat`): Accepts POST requests with chat messages and streams responses
-2. **Streaming**: Uses Server-Sent Events (SSE) for real-time streaming of AI responses
-3. **Workers AI Binding**: Connects to Cloudflare's AI service via the Workers AI binding
+### 修改系统提示词
 
-### Frontend
+可以通过更新 src/index.ts 中的 SYSTEM_PROMPT 常量来更改默认系统提示词，使其符合你的数字分身人格和行为模式。
 
-The frontend is a simple HTML/CSS/JavaScript application that:
+### 样式
 
-1. Presents a chat interface
-2. Sends user messages to the API
-3. Processes streaming responses in real-time
-4. Maintains chat history on the client side
+UI 样式包含在 public/index.html 的 <style> 部分。可以修改顶部的 CSS 变量以快速更改配色方案。
 
-## Customization
-
-### Changing the Model
-
-To use a different AI model, update the `MODEL_ID` constant in `src/index.ts`. You can find available models in the [Cloudflare Workers AI documentation](https://developers.cloudflare.com/workers-ai/models/).
-
-### Using AI Gateway
-
-The template includes commented code for AI Gateway integration, which provides additional capabilities like rate limiting, caching, and analytics.
-
-To enable AI Gateway:
-
-1. [Create an AI Gateway](https://dash.cloudflare.com/?to=/:account/ai/ai-gateway) in your Cloudflare dashboard
-2. Uncomment the gateway configuration in `src/index.ts`
-3. Replace `YOUR_GATEWAY_ID` with your actual AI Gateway ID
-4. Configure other gateway options as needed:
-   - `skipCache`: Set to `true` to bypass gateway caching
-   - `cacheTtl`: Set the cache time-to-live in seconds
-
-Learn more about [AI Gateway](https://developers.cloudflare.com/ai-gateway/).
-
-### Modifying the System Prompt
-
-The default system prompt can be changed by updating the `SYSTEM_PROMPT` constant in `src/index.ts`.
-
-### Styling
-
-The UI styling is contained in the `<style>` section of `public/index.html`. You can modify the CSS variables at the top to quickly change the color scheme.
-
-## Resources
+## 资源
 
 - [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
 - [Cloudflare Workers AI Documentation](https://developers.cloudflare.com/workers-ai/)

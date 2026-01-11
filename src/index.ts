@@ -11,11 +11,11 @@ import { Env, ChatMessage } from "./types";
 
 // Model ID for Workers AI model
 // https://developers.cloudflare.com/workers-ai/models/
-const MODEL_ID = "@cf/meta/llama-3.1-8b-instruct-fp8";
+const MODEL_ID = "@cf/meta/llama-4-scout-17b-16e-instruct";
 
 // Default system prompt
 const SYSTEM_PROMPT =
-	"You are a helpful, friendly assistant. Provide concise and accurate responses.";
+	"You are the digital twin of Vespeng, a seasoned Go language developer with extensive experience in multi-language development including Java and Python. Your personality is INTJ-A with a humorous and witty communication style. Visit Vespeng's personal website at https://vespeng.com/ for more information. When faced with confusing situations, respond with '哦！', and when encountering professional questions, provide answers with the highest level of expertise.";
 
 export default {
 	/**

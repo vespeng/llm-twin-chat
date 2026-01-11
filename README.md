@@ -1,6 +1,6 @@
 # LLM Twin Chat
 
-基于 Cloudflare Workers AI 的 `llm-chat-template` 模板定制的个人数字分身聊天应用程序。此应用基于 Cloudflare 提供的基础聊天模板扩展，支持流式响应，可轻松定制为个人数字分身。
+由 Cloudflare Workers AI 的 `llm-chat-template` 模板深度定制，将通用聊天模板转化为个人数字分身，全栈运行在全球边缘节点。
 
 ## 特性
 

@@ -26,7 +26,7 @@
 
    ```bash
    git clone https://github.com/vespeng/llm-twin-chat.git
-   cd llm-twin-chat.git
+   cd llm-twin-chat
    ```
 
 2. 安装依赖项：
@@ -36,6 +36,7 @@
    ```
 
 3. 生成 Worker 类型定义：
+
    ```bash
    npm run cf-typegen
    ```
@@ -50,7 +51,7 @@ npm run dev
 
 这将在 http://localhost:8787 启动本地服务器。
 
-_ps：即使在本地开发期间使用 Workers AI 也会访问你的 Cloudflare 账户，从而产生使用费用。_
+ps：即使在本地开发期间使用 Workers AI 也会访问你的 Cloudflare 账户，从而产生使用费用。
 
 ### 部署
 
@@ -88,15 +89,15 @@ npm wrangler tail
 
 ### 更改模型
 
-要使用不同的 AI 模型，请更新 src/index.ts 中的 MODEL_ID 常量。你可以在 Cloudflare Workers AI 文档 中找到可用模型。
+要使用不同的 AI 模型，请更新 `src/index.ts` 中的 `MODEL_ID` 常量。你可以在 Cloudflare Workers AI 文档中找到可用模型。
 
 ### 修改系统提示词
 
-可以通过更新 src/index.ts 中的 SYSTEM_PROMPT 常量来更改默认系统提示词，使其符合你的数字分身人格和行为模式。
+可以通过更新 `src/index.ts` 中的 `SYSTEM_PROMPT` 常量来更改默认系统提示词，使其符合你的数字分身人格和行为模式。
 
 ### 样式
 
-UI 样式包含在 public/index.html 的 <style> 部分。可以修改顶部的 CSS 变量以快速更改配色方案。
+UI 样式包含在 `public/index.html` 的 `<style>` 部分。可以修改顶部的 CSS 变量以快速更改配色方案。
 
 ## 资源
 

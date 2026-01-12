@@ -1,6 +1,6 @@
 # LLM Twin Chat
 
-由 Cloudflare Workers AI 的 `llm-chat-template` 模板深度定制，将通用聊天模板转化为个人数字分身，全栈运行在全球边缘节点。
+由 Cloudflare Workers AI 的 `llm-chat-app-template` 模板深度定制，将通用聊天模板转化为个人数字分身，全栈运行在全球边缘节点。
 
 ## 特性
 

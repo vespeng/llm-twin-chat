@@ -73,16 +73,18 @@ npm wrangler tail
 
 ```
 /
-├── public/             # 静态资源
-│   ├── index.html      # 聊天 UI HTML
-│   └── chat.js         # 聊天 UI 前端脚本
-├── src/
-│   ├── index.ts        # 主 Worker 入口点
-│   └── types.ts        # TypeScript 类型定义
-├── test/               # 测试文件
-├── wrangler.jsonc      # Cloudflare Worker 配置
-├── tsconfig.json       # TypeScript 配置
-└── README.md           # 此文档
+├── public/                # 静态资源
+│   ├── chat.js            # 聊天 UI 前端脚本
+│   ├── index.html         # 聊天 UI HTML
+│   └── styles.css         # 聊天 UI 样式
+├── src/ 
+│   ├── index.ts           # 主 Worker 入口点
+│   ├── system-prompt.ts   # 系统提示词
+│   └── types.ts           # TypeScript 类型定义
+├── test/                  # 测试文件
+├── wrangler.jsonc         # Cloudflare Worker 配置
+├── tsconfig.json          # TypeScript 配置
+└── README.md              # 此文档
 ```
 
 ## 自定义
@@ -93,11 +95,11 @@ npm wrangler tail
 
 ### 修改系统提示词
 
-可以通过更新 `src/index.ts` 中的 `SYSTEM_PROMPT` 常量来更改默认系统提示词，使其符合你的数字分身人格和行为模式。
+可以通过更新 `src/system-prompt.ts` 来更改默认系统提示词，使其符合你的数字分身人格和行为模式。
 
 ### 样式
 
-UI 样式包含在 `public/index.html` 的 `<style>` 部分。可以修改顶部的 CSS 变量以快速更改配色方案。
+UI 样式包含在 `public/styles.css` 文件中。可以修改顶部的 CSS 变量以快速更改配色方案。
 
 ## 资源
 

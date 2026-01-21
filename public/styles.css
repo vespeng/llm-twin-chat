@@ -6,7 +6,7 @@
 	--dark-bg: #212529;
 	--border-color: #dee2e6;
 	--text-color: #1a1a1a;
-	--text-light: #495057;
+	--text-light: #282c34;
 	--user-msg-bg: #e3f2fd;
 	--assistant-msg-bg: #f0f8ff;
 	--shadow: 0 2px 10px rgba(0, 123, 255, 0.1);
@@ -37,17 +37,11 @@ body {
 
 header {
 	text-align: center;
-	margin-bottom: 2rem;
 	padding: 1rem 0;
-	border-bottom: 1px solid var(--border-color);
-	background: white;
-	border-radius: var(--radius);
-	box-shadow: var(--shadow);
-	margin-bottom: 1.5rem;
 }
 
 h1 {
-	font-size: 1.75rem;
+	font-size: 1.65rem;
 	color: var(--primary-color);
 	font-weight: 600;
 }
@@ -60,21 +54,14 @@ p {
 	display: flex;
 	flex-direction: column;
 	flex: 1; /* 占据剩余空间 */
-	min-height: 0; /* 重要：允许flex子项收缩 */
-	border: none;
-	border-radius: var(--radius);
-	overflow: hidden;
-	box-shadow: var(--shadow);
-	background: white;
-	height: calc(100vh - 250px); /* 计算合适高度 */
+	min-height: 0; /* 允许flex子项收缩 */
 }
 
 .chat-messages {
 	flex: 1;
 	overflow-y: auto; /* 保持滚动条 */
 	padding: 1.5rem;
-	background-color: var(--light-bg);
-	background: linear-gradient(to bottom, #f8fbff 0%, #ffffff 100%);
+	background: var(--light-bg) linear-gradient(to bottom, #f8fbff 0%, #ffffff 100%);
 	display: flex;
 	flex-direction: column;
 }
@@ -115,7 +102,6 @@ p {
 .message-input {
 	display: flex;
 	padding: 0.8rem;
-	border-top: 1px solid var(--border-color);
 	background-color: white;
 	flex-shrink: 0;
 }
@@ -182,14 +168,10 @@ p {
 }
 
 footer {
-	margin-top: 1.5rem;
 	text-align: center;
 	font-size: 0.85rem;
 	color: var(--text-light);
-	background: white;
 	padding: 1rem;
-	border-radius: var(--radius);
-	box-shadow: var(--shadow);
 }
 
 /* 响应式设计 */

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,35 +9,27 @@
 <body>
 <header>
 	<h1>Vespeng AI Chat</h1>
-	<p>Powered by Cloudflare Workers AI</p>
 </header>
 
 <div class="chat-container">
 	<div id="chat-messages" class="chat-messages">
 		<div class="message assistant-message">
-			<p>
-				嗨，我是 Vespeng 的 AI 数字分身~ 有什么想聊的或需要帮忙的吗？
-			</p>
+			<p>嗨 👋 </br> 我是 Vespeng 的 AI 数字分身 ~ 有什么想聊的或需要帮忙的吗？</p>
 		</div>
 	</div>
 
 	<div class="typing-indicator" id="typing-indicator">
 		AI is thinking...
 	</div>
+</div>
 
-	<div class="message-input">
-				<textarea
-						id="user-input"
-						placeholder="Type your message here..."
-						rows="1"
-						autofocus
-				></textarea>
-		<button id="send-button">Send</button>
-	</div>
+<div class="message-input">
+	<textarea id="user-input" placeholder="Type your message here..." rows="1" autofocus></textarea>
+	<button id="send-button">Send</button>
 </div>
 
 <footer>
-	<p>Cloudflare Workers AI Chat Template &copy; 2025</p>
+	<p>© 2026 Vespeng AI Chat. Powered by Cloudflare Workers AI.</p>
 </footer>
 
 <!-- 引入 Marked.js 库 -->
